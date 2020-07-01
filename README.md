@@ -11,7 +11,7 @@ How to save and download image with Godot (need a PHP server to this example)
 - Screenshot
 - Send image to server
 - Download image
-- Configure your file: (server/download.php)[server/download.php] on PHP server
+- Configure your file: [server/download.php](server/download.php) on PHP server
 
 ----------
 

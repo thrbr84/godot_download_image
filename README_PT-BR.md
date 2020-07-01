@@ -11,7 +11,7 @@ Como salvar e fazer download de uma imagem com a Godot (Para esse exemplo é nec
 - Captura da tela
 - Enviar a imagem para o servidor
 - Fazer download da imagem
-- Configure seu arquivo: (server/download.php)[server/download.php] em um servidor com PHP
+- Configure seu arquivo: [server/download.php](server/download.php) em um servidor com PHP
 
 ----------
 
