@@ -1,4 +1,7 @@
 <?php
+// setting cors
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Content-Type");
 
 
 // DOWNLOAD FILE ---------------------------------------------------
@@ -16,9 +19,6 @@ if (isset($_REQUEST['d'])) {
         // prepare image to download
         $im1 = imagecreatefrompng($file_path);
         imagesavealpha($im1, true);
-
-        // accept any origin cor
-        header("Access-Control-Allow-Origin: *");
 
         // download image
         header('Content-Disposition: Attachment;filename=' . $file_name);
@@ -49,22 +49,18 @@ if (isset($_REQUEST['d'])) {
  * Godot send to HTTP, we get the image and save in local server
  */
 
-
 // request
 $data_req = json_decode( file_get_contents('php://input') );
 
-if (!empty($data_req)) {
+// file_name
+$file_name = $data_req->uniquecode;
 
-    // file_name
-    $file_name = $data_req->uniquecode;
-    
-    // prepare base64 to file
-    $data = 'data:image/png;base64,' . $data_req->image;
-    
-    list($type, $data) = explode(';', $data);
-    list(, $data)      = explode(',', $data);
-    $data = base64_decode($data);
-    
-    // save local
-    file_put_contents($file_name . '.png', $data);
-}
+// prepare base64 to file
+$data = 'data:image/png;base64,' . $data_req->image;
+
+list($type, $data) = explode(';', $data);
+list(, $data)      = explode(',', $data);
+$data = base64_decode($data);
+
+// save local
+file_put_contents($file_name . '.png', $data);

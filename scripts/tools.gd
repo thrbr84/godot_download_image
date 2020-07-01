@@ -13,7 +13,7 @@ func _ready():
 		b.get_node("touch").connect("pressed", self, "_buttonClick", [b.get_name()])
 	
 	# connect return of HTTP
-	HttpLayer.connect("request_completed", self, "_on_request_completed")
+	var _ret = HttpLayer.connect("request_completed", self, "_on_request_completed")
 
 func _buttonClick(_action):
 	match _action:
@@ -84,5 +84,5 @@ func _save():
 
 func _on_request_completed(_return, _code, _route):
 	# download image
-	if _code == 200:
-		OS.shell_open(str(HttpLayer.endpoint_api, "download.php?d=", unique_code))
+	if _code == 200 && _route == "saveImage":
+		var _ret = OS.shell_open(str(HttpLayer.endpoint_api, "download.php?d=", unique_code))
