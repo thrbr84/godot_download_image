@@ -16,9 +16,9 @@ Como salvar e fazer download de uma imagem com a Godot (Para esse exemplo é nec
 ----------
 
 ### Demonstração (PT-BR)
-- https://www.youtube.com/watch?v=
+- https://www.youtube.com/watch?v=4CO4EL5KA7M
 
-[![Video](https://img.youtube.com/vi//0.jpg)](https://www.youtube.com/watch?v=)
+[![Video](https://img.youtube.com/vi/4CO4EL5KA7M/0.jpg)](https://www.youtube.com/watch?v=4CO4EL5KA7M)
 
 ----------
 
